@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,300&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+:root {
+    --topSpacing: 0.1rem;
+    --topTrans: all 0.2s ease-out;
+    --darkGray: rgb(34,40,49);
+    --midGray: rgb(57,62,70);
+    --darkCyan: rgb(0,173,181);
+    --white: rgb(238,238,238);
+    --midBrown: rgb(199,177,152);
+    --lightBrown: rgb(223,211,195);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Form Style */
+
+.addBtn {
+    display: block;
+    position: fixed;
+    height:50px;
+    width: 50px;
+    top: 30px;
+    left: 30px;
+    background-color: var(--darkCyan);
+    border-radius: 50px;
+    border: 5px solid white;
+    z-index: 3;
+    transition: var(--topTrans);
+}
+
+.fa-plus {
+    position: fixed;
+    font-size: 2rem;
+    margin: 5px 0 0 6px;
+    color: var(--darkGray);
+    transform: rotateZ(0deg);
+    z-index: 2;
+    transition: var(--topTrans);
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotateZ(45deg);
+    color: white;
+}
+
+.checkbox-container {
+    display: block;
+    color: var(--darkGray);
+    margin: 10px auto 20px auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.addBook {
+    background-color: white;
+    height: 100vh;
+    width: 500px;
+    position: fixed;
+    top: 0px;
+    transform: translateX(-100%);
+    
+    z-index: 1;
+    transition: var(--topTrans);
+}
+
+.triggerMenu {
+    transform: translateX(0%);
+    box-shadow: 5px 5px 10px 5px rgba(50, 50, 50, 0.2);
+    
+}
+
+.addBook form{
+    display: flex;
+    flex-direction: column;
+    margin: 75px auto 50px auto;
+    width: 200px;
+}
+
+.addBook form .req{
+    max-width: 500px;
+    border: none;
+    border-bottom: 1px solid var(--darkGray);
+    outline: none;
+    margin: 10px;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+    color: var(--darkGray);
+    transition: var(--topTrans);
+    padding: 0.3rem 0 0.3rem 0.3rem;
+}
+
+.addBook form ::placeholder{
+    font-size: 1.2rem;
+}
+
+.addBook form .req:focus{
+    box-shadow: 0px 4px 0 var(--darkCyan);
+}
+
+.addBookBtn {
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 180px;
+    margin: 5px auto;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    transition: var(--topTrans);
+    background-color: var(--white);
+}
+
+.addBookBtn:hover {
+    color: var(--darkCyan);
+    background-color: var(--midGray);
+}
+
+.lastBookDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--darkGray);
+}
+
+.lastBookTitle {
+    border-bottom: 1px solid var(--darkGray);
+    margin-bottom: 20px;
+}
+
+.lastBook {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.lastAuthor {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .addBook {
+        width: 100vw;
+    }
+}
+
+/* Form Style End */
+
+
+/* Bookshelf Style */
+
+.mainTitleDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: left;
+    color: var(--darkGray);
+    font-size: 2rem;
+    transition: var(--topTrans);
+}
+
+.fa-arrow-up{
+    font-size: 3rem;
+}
+
+.remove {
+    display: none;
+}
+
+.remove-book {
+    cursor: pointer;
+    transition: var(--topTrans);
+}
+
+.remove-book:hover {
+    color: red;
+}
+
+.read-status {
+    cursor: pointer;
+    transition: var(--topTrans);
+}
+
+.read-ok {
+    font-weight: bold;
+    color: var(--darkCyan);
+}
+
+@media screen and (max-width: 500px) {
+    .mainTitleDiv {
+        font-size: 0.7rem;
+    }
+    .fa-arrow-up{
+        font-size: 1rem;
+    }
+}
+
+.bookshelf {
+    position: relative;
+    width: 90vw;
+    margin: 100px auto 0 auto;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    background-color: var(--darkCyan);
+    z-index: 0;
+
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    max-width: 175px;
+    background-color: white;
+    box-shadow: 2px 2px 0 var(--darkGray), 4px 4px 0 white, 6px 6px 0 var(--darkGray);
+    transition: var(--topTrans);
+}
+
+.book h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.book h3 {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
+
+.book .pages {
+    padding-bottom: 1rem;
+}
+
+.book-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    
+}
+
+.book-btns *{
+    cursor: pointer;
+}
+
+/* Bookshelf Style End */

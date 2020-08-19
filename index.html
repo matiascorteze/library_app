@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My eLibrary</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/19ab91f7bd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Open/Close Menu Button -->
+    <div class="addBtn">
+        <i class="fas fa-plus"></i>
+    </div>
+    <!-- Open/Close Menu Button End-->
+
+    <!-- Add Book Menu-->
+    <section class="addBook">
+        <form autocomplete="off">
+            <input type="text" id="booktitle" class="req" name="booktitle" value="" placeholder="Book title">
+            <input type="text" id="author" class="req" name="author" value="" placeholder="Author">
+            <input type="number" id="pages" class="req" name="pages" value="" placeholder="Pages">
+            <div class="checkbox-container">
+                <input type="checkbox" id="read" name="read" value="read">
+                <label for="read">Have you read it?</label>
+            </div>
+            <input type="submit" value="Add" class="addBookBtn">
+            <input type="reset" value="Clear" class="addBookBtn">
+        </form>
+
+        <div class="lastBookDiv">
+            <h3 class="lastBookTitle">Last Book Added</h3>
+            <span class="lastBook"></span><br>
+            <span class="lastAuthor"></span>
+        </div>
+        
+    </section>
+    <!-- Add Book Menu End -->
+
+    <!-- Bookshelf -->
+    <div class="mainTitleDiv">
+        <i class="fas fa-arrow-up"></i>
+        <h1 class="lib-title">Please,<br>add your first book :)</h1>
+    </div>
+
+    <section class="bookshelf"></section>
+    <!-- Bookshelf End-->
+
+    <script src="./app.js"></script>
+</body>
+</html>
